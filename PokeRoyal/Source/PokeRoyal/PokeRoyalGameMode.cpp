@@ -2,6 +2,7 @@
 
 #include "PokeRoyalGameMode.h"
 #include "PokeRoyalCharacter.h"
+#include "Pokemon/PokemonRessources.h"
 #include "UObject/ConstructorHelpers.h"
 
 APokeRoyalGameMode::APokeRoyalGameMode()
@@ -12,4 +13,13 @@ APokeRoyalGameMode::APokeRoyalGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+}
+
+void APokeRoyalGameMode::InitGame(const FString& MapName,
+	const FString& Options,
+	FString& ErrorMessage)
+{
+	Super::InitGame(MapName, Options,ErrorMessage);
+	auto pokemonRessource = GEngine->GetEngineSubsystem<UPokemonRessources>();
+	pokemonRessource->InitTableType();
 }

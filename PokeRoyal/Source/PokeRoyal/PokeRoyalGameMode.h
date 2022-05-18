@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+
 #include "PokeRoyalGameMode.generated.h"
 
 UCLASS(minimalapi)
@@ -13,6 +14,10 @@ class APokeRoyalGameMode : public AGameModeBase
 
 public:
 	APokeRoyalGameMode();
+
+	void InitGame(const FString& MapName,
+		const FString& Options,
+		FString& ErrorMessage) override;
 };
 
 

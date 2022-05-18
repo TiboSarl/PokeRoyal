@@ -20,18 +20,6 @@ public:
 	FString tag;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float AttMultiplier;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float DefMultiplier;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float SpAttMultiplier;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float SpDefMultiplier;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float SpeMultiplier;
+	TMap<FString, int> baseStats;
 	
 };

@@ -18,6 +18,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString tag;
 
+	float efficiency(TArray<UType*> autre);
+
+	bool operator==(UType* autre) {
+		return tag == autre->tag;
+	}
+
 };
 
 
@@ -32,7 +38,7 @@ public:
 	TSubclassOf<UType> type;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<TSubclassOf<UType>> StrongAgainst;
+	TArray<TSubclassOf<UType>> ResistAgainst;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<UType>> WeakAgainst;
@@ -42,3 +48,19 @@ public:
 };
 
 
+USTRUCT(Blueprintable)
+struct FTypeInfo {
+	GENERATED_USTRUCT_BODY()
+
+public:
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<UType*> ResistAgainst;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<UType*> WeakAgainst;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TArray<UType*> NullAgainst;
+};

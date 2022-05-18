@@ -72,3 +72,6 @@ PokeRoyal/Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 PokeRoyal/DerivedDataCache/*
+
+*.uasset
+*.umap

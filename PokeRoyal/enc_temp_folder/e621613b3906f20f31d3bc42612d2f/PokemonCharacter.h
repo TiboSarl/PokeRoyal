@@ -19,10 +19,10 @@ class POKEROYAL_API APokemonCharacter : public ACharacter
 public:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	TSubclassOf<UType> type;
+	UType* type;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<UNature> nature;
+	UNature* nature;
 
 	// Sets default values for this character's properties
 	APokemonCharacter();
